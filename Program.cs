@@ -16,11 +16,11 @@ foreach (var item in HeaderNames)
 {     
     var price = item.SelectSingleNode("//div[@class='promotion-item__price-block']");
     var desc = item.SelectSingleNode("//p[@class='promotion-item__title']");
-    titles.Add(new Row { Title = desc.InnerText,Prince = price.InnerText });
+    titles.Add(new Row { Title = desc.InnerText,Price = price.InnerText });
 
 }
 
-using (var writer = new StreamWriter("C:/Users/Guilherme/Downloads/example.csv"))
+using (var writer = new StreamWriter("C:/Users/Guilherme/Downloads/Ofertas.csv"))
 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
 {
 csv.WriteRecords(titles);
